@@ -8,8 +8,12 @@ of the STM32 microcontroller.  It also implements an Olimex STM32_P103
 developmentvboard.  This project runs the demos located in the
 stm32_p103_demos project located at: https://github.com/beckus/stm32_p103_demos .
 
+Install Package
+sudo apt install libtool libglib2.0-dev
+
 Commands for a typical build:
-./configure --enable-debug --target-list="arm-softmmu"
+# ./configure --enable-debug --target-list="arm-softmmu"
+./configure --enable-debug --target-list="arm-softmmu" --python=/usr/bin/python2 --extra-cflags="-Wno-error=deprecated-declarations -Wno-error=address-of-packed-member -Wno-error=format-truncation= -Wno-error=unused-const-variable= -Wno-error=logical-not-parentheses -Wno-error=stringop-truncation -Wno-error=unused-variable -Wno-error=unused-function" 
 make
 
 Useful make commands when rebuilding:
